@@ -1,0 +1,20 @@
+:local {
+  .wrapper {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .header {
+    margin-left: auto;
+    font-size: 26px;
+    font-weight: 600;
+  }
+
+  .locale {
+    margin: auto 150px;
+  }
+}

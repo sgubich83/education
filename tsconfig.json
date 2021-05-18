@@ -16,11 +16,21 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "strictNullChecks":false,
+    "suppressImplicitAnyIndexErrors": true,
+    "downlevelIteration": true,
     "noEmit": true,
     "jsx": "react",
     "baseUrl": "./src"
   },
   "include": [
     "src"
+  ],
+  "types": ["node"], // within compilerOptions
+  "exclude": [
+    "node_modules",
+    "typings/main",
+    "typings/main.d.ts",
+    "typings/index.d.ts"
   ]
 }

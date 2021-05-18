@@ -1,0 +1,36 @@
+{
+  "common.appName": "Aplikacja Sergeya Gubicha",
+  "common.header": "Witam wszystkich w mojej aplikacji testowej. Technologia się rozwija i potrzeba więcej praktyki, aby doświadczyć przyjemności programowania. Żadnych piękności nie obiecuję, główny nacisk zostanie położony na funkcjonalność. Planuję zostawić swoje uwagi na temat każdej z technologii, dzięki której podniosę swój poziom wiedzy:",
+  "common.work1": "Redux-saga",
+  "common.work2": "Fiber",
+  "common.work3": "Portals",
+  "common.work4": "Typescript",
+  "common.work5": "Węzeł do fałszywego interfejsu API zaplecza",
+  "common.work6": "Więcej zostanie dodanych w trakcie procesu",
+  "common.description1": "Saga Redax to rzecz specyficzna, ale interesująca. Zaczynając z daleka - interakcje API są dość częstym wymaganiem w aplikacjach, jednak samo korzystanie z Redux nie daje nam dużej elastyczności. Rdzeniem Redux jest kontener stanu, który obsługuje tylko synchroniczne strumienie danych. Dla każdej akcji do magazynu wysyłany jest obiekt opisujący, co się stało, następnie wywoływany jest reduktor i stan jest natychmiast aktualizowany. Ale w przypadku wywołania asynchronicznego należy najpierw poczekać na odpowiedź, a następnie, jeśli nie było błędów, zaktualizować stan. Co się stanie, jeśli Twoja aplikacja ma złożoną logikę / przepływ pracy? W tym celu Redux używa oprogramowania pośredniego. Warstwa pośrednia to fragment kodu, który jest wykonywany po wysłaniu akcji, ale przed wywołaniem reduktora. Warstwy środkowe można łączyć w łańcuchy, aby obsługiwały różne akcje, ale wynik musi być prostym obiektem (akcją). Redux-thunk to standardowy sposób wykonywania operacji asynchronicznych w Redux. Redux-thunk pozwala twórcy akcji na wywołanie funkcji oprócz obiektu, przekształcając w ten sposób generator akcji w thunk. Zaletą korzystania z redux-thunk jest to, że komponent nie wie, że trwa asynchroniczna akcja. Dlatego warstwa środkowa automatycznie przekazuje funkcję wysyłającą do funkcji, którą zwraca generator akcji, a następnie na zewnątrz dla komponentu nie ma różnicy w wywoływaniu akcji synchronicznych i asynchronicznych (i komponenty nie muszą się już o to martwić). Tak więc za pomocą mechanizmu warstwy środkowej dodaliśmy niejawną warstwę (warstwę pośrednią), która zapewniła nam większą elastyczność. A teraz o sagach - Redux-saga to biblioteka, której celem jest ułatwienie i ulepszenie efektów ubocznych poprzez pracę z sagami. Sagi to wzorzec projektowy wywodzący się ze świata transakcji rozproszonych, w którym saga zarządza procesami, które należy wykonać w sposób transakcyjny, zachowując stan wykonania i kompensując nieudane procesy. W kontekście Redux, saga jest zaimplementowana jako warstwa pośrednia (nie możemy używać reduktorów, ponieważ muszą to być czyste funkcje), która koordynuje i wywołuje akcje asynchroniczne (efekty uboczne). Saga Redux robi to z generatorami ES6. Generatory to funkcje, które można zatrzymać i wznowić zamiast wykonywania wszystkich wyrażeń w jednym przebiegu.\n\nKiedy wywołujesz funkcję generatora, zwraca ona obiekt iteratora. Z każdym wywołaniem metody iteratora next () treść funkcji generatora będzie wykonywana aż do następnego wyrażenia yield, a następnie zatrzyma się. Ogólnie rzecz biorąc, mamy sagę, której zadaniem jest śledzenie wysłanych działań. Aby skoordynować logikę, którą chcemy wdrożyć w sadze, możemy użyć funkcji pomocniczej takeEvery do stworzenia nowej sagi do wykonania operacji. Jeśli jest wiele żądań, takeEvery uruchamia wiele instancji sagi pracowników. Innymi słowy, implementuje dla Ciebie współbieżność. Należy zauważyć, że saga obserwatora jest kolejną niejawną warstwą pośrednictwa, która zapewnia większą elastyczność we wdrażaniu złożonej logiki (ale może to być przesada w przypadku prostych aplikacji). Zamiast bezpośrednio wywoływać żądanie asynchroniczne, metoda call zwróci tylko obiekt opisujący operację, a redux-saga może zająć się wywołaniem i zwróceniem wyników do funkcji generatora. Pracując z efektami, saga redux czyni sagi raczej deklaratywnymi niż imperatywnymi. Programowanie deklaratywne to styl programowania, który próbuje zminimalizować lub wyeliminować skutki uboczne, opisując, co program powinien robić, zamiast opisywać, jak powinien to robić. Ogólnie - muszę więcej popracować z sagami - choć wydaje mi się to trochę skomplikowane - prawdopodobnie dlatego, że wciąż myślę Imperatywny",
+  "common.description2": "Fiber - jeszcze nie zdecydowałem, jak i gdzie dodam do projektu",
+  "common.description3": "Portale są fajne. W tej chwili ta wskazówka została stworzona przy pomocy portalu. Z dokumentacji wynika, że jest to sposób renderowania elementu w węźle DOM, który istnieje poza hierarchią DOM komponentu nadrzędnego. Te. element znajduje się gdzieś w drzewie DOM, poza normalnym drzewem komponentów Reacta, ale React nadal kontroluje ten element. Zwykle jest to konieczne, aby komponent potomny wizualnie „wyszedł” ze swojego kontenera. Na przykład okna dialogowe, etykiety narzędzi.",
+  "common.description4": "Maszynopis - używam go wszędzie w projekcie, ale czasami podaje błędy i nie zawsze jasne opisy. Dlatego w niektórych miejscach dodaję @ts-ignore. Zajmę się tymi problemami podczas procesu tworzenia.",
+  "common.description5": "Węzeł do fałszywego api - na razie używam darmowego api, ale dodam własne",
+  "common.description6": "Więcej zostanie dodanych w trakcie procesu",
+  "common.required": "Obowiązkowy",
+  "common.hint": "Wskazówka",
+  "common.credentials": "Kwalifikacje:",
+  "common.lazy.button": "lub guzik dla leniwych",
+  "common.not.found": "Użytkownik nie znaleziony",
+  "common.progress": "W trakcie",
+
+  "login.user": "Użytkownik",
+  "login.password": "Hasło",
+  "login.signIn": "Zaloguj się",
+
+  "navigation.dashboard": "Zasoby",
+  "navigation.users": "Użytkownicy",
+  "navigation.logout": "Wyloguj",
+
+  "users.id": "Id",
+  "users.firstName": "Imię",
+  "users.surname": "Nazwisko",
+  "users.email": "Email",
+  "users.support": "Wsparcie"
+}

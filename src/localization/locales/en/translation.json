@@ -1,0 +1,36 @@
+{
+  "common.appName": "Sergey Gubich's application",
+  "common.header": "Hello everyone to my test app. Technology advances and it takes more practice to experience the pleasure of programming. I do not promise any beauties, functionality will be made. I plan to leave my comments on each of the technologies by which I will increase my level of knowledge:",
+  "common.work1": "Redux-saga",
+  "common.work2": "Fiber",
+  "common.work3": "Portals",
+  "common.work4": "Typescript",
+  "common.work5": "Node for fake backend api",
+  "common.work6": "More will be added in the process",
+  "common.description1": "Redux-saga - specific but interesting thing. Starting from afar - API interactions are a fairly common requirement in applications, however, using Redux alone does not give us much flexibility. The core of Redux is a state container that only supports synchronous data streams. For each action, an object describing what happened is sent to the store, then the reducer is called and the state is immediately updated. But in the case of an asynchronous call, you must first wait for a response and then, if there were no errors, update the state. What if your application has some complex logic / workflow? For this, Redux uses middlewares. An intermediate layer is a piece of code that is executed after the action is dispatched, but before the reducer is called.\nMiddle layers can be chained to handle different actions, but the output must be a simple object (action). Redux-thunk is the standard way to perform asynchronous operations in Redux. Redux-thunk allows an action creator to dispatch a function in addition to an object, thus converting an action generator to a thunk. The advantage of using redux-thunk is that the component doesn't know that an asynchronous action is in progress.\n\nBecause the middle layer automatically passes the dispatch function to the function that the action generator returns, then outside, for the component, there is no difference in calling synchronous and asynchronous actions (and components no longer need to worry about that). So, with the help of the middle layer mechanism, we added an implicit layer (a layer of indirection), which gave us more flexibility. And now about the sagas - Redux-saga is a library aimed at making side effects easier and better by working with sagas. Sagas are a design pattern that came from the world of distributed transactions, where the saga manages the processes that need to be executed in a transactional way, keeping the execution state and compensating for failed processes. In the context of Redux, the saga is implemented as an intermediate layer (we cannot use reducers because they have to be pure functions) that coordinates and invokes asynchronous actions (side effects). Redux-saga does this with ES6 generators. Generators are functions that can be stopped and resumed instead of executing all expressions in one pass.\n\nWhen you call a generator function, it returns an iterator object. And with each call to the next () iterator method, the body of the generator function will execute until the next yield expression and then stop. Generally speaking, we have a saga whose job it is to keep track of dispatched actions. To coordinate the logic that we want to implement within the saga, we can use the takeEvery helper function to create a new saga to perform the operation. If there are multiple requests, takeEvery starts multiple instances of the worker saga. In other words, it implements concurrency for you. It should be noted that the watcher saga is another implicit layer of indirection that gives you more flexibility to implement complex logic (but this might be overkill for simple applications). Instead of calling the asynchronous request directly, the call method will only return an object describing the operation, and redux-saga can take care of calling and returning the results to the generator function. By working with Effects, redux-saga makes sagas Declarative rather than Imperative. Declarative programming is a style of programming that attempts to minimize or eliminate side effects by describing what a program should do instead of describing how it should do it. In general - I need to work more with the sagas - while it seems a bit complicated to me - probably because I still think Imperative",
+  "common.description2": "Fiber - I have not decided yet how and where I will add to the project",
+  "common.description3": "Portals are cool. Right now, this tip has been made with the help of the portal. It follows from the documentation that this is a way to render an element in a DOM node that exists outside the DOM hierarchy of the parent component. Those. the element is somewhere in the DOM tree that is outside of the normal React component tree, but React still controls that element. Typically, this is necessary for the child component to visually \"exit\" from its container. For example, dialogs, tooltips.",
+  "common.description4": "Typescript - I use it everywhere in the project, but sometimes it gives errors and not always clear descriptions. Therefore, in some places I add @ts-ignore. I will deal with these problems during the development process.",
+  "common.description5": "Node for fake backend api - for now I use some kind of free api, but I will add my api",
+  "common.description6": "More will be added in the process",
+  "common.required": "Required",
+  "common.hint": "Hint",
+  "common.credentials": "Credentials:",
+  "common.lazy.button": "or a button for the lazy",
+  "common.not.found": "User not found",
+  "common.progress": "In progress",
+
+  "login.user": "User",
+  "login.password": "Password",
+  "login.signIn": "Sign In",
+
+  "navigation.dashboard": "Resources",
+  "navigation.users": "Users",
+  "navigation.logout": "Logout",
+
+  "users.id": "Id",
+  "users.firstName": "First Name",
+  "users.surname": "Surname",
+  "users.email": "Email",
+  "users.support": "Support"
+}

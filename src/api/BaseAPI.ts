@@ -1,36 +1,36 @@
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosError } from 'axios'
+import axios, { AxiosInstance, AxiosRequestConfig, AxiosError } from "axios";
 
-const API_CALL_TIMEOUT = 30000
+const API_CALL_TIMEOUT = 30000;
 
 const axiosConfig: AxiosRequestConfig = {
-  baseURL: '/s10wer/Api',
+  baseURL: "https://reqres.in/api",
   timeout: API_CALL_TIMEOUT,
   headers: {
-    Accept: 'application/json;charset=UTF-8',
-    'Content-Type': 'application/json;charset=UTF-8',
-    'Access-Control-Allow-Origin': '*',
+    Accept: "application/json;charset=UTF-8",
+    "Content-Type": "application/json;charset=UTF-8",
+    "Access-Control-Allow-Origin": "*",
   },
-}
+};
 
-const API: AxiosInstance = axios.create(axiosConfig)
+const API: AxiosInstance = axios.create(axiosConfig);
 
 // normalization for axios http-errors
 const castError = (error: AxiosError) => {
-  const { response } = error
-  const errorResult = response ? response.data : error
-  const status = response ? response.status : error.code
-  const statusText = response ? response.statusText : error.message
+  const { response } = error;
+  const errorResult = response ? response.data : error;
+  const status = response ? response.status : error.code;
+  const statusText = response ? response.statusText : error.message;
 
-  if (process.env.NODE_ENV !== 'production') {
-    console.error('API:', errorResult) // eslint-disable-line
+  if (process.env.NODE_ENV !== "production") {
+    console.error("API:", errorResult); // eslint-disable-line
   }
 
   return {
     errorResult,
     status,
     statusText,
-  }
-}
+  };
+};
 
 class BaseAPI {
   call({
@@ -53,9 +53,9 @@ class BaseAPI {
         ...headers,
       },
       data,
-    }
-    return API(callParams).catch(error => Promise.reject(castError(error)))
+    };
+    return API(callParams).catch((error) => Promise.reject(castError(error)));
   }
 }
 
-export default BaseAPI
+export default BaseAPI;

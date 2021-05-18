@@ -1,12 +1,11 @@
-import React from 'react'
-import { Spin } from 'antd'
-// @ts-ignore
-import styles from './Spinner.module.scss'
+import React, { FC } from "react";
+import { CircularProgress } from "@material-ui/core";
+import styles from "./Spinner.module.scss";
 
-const Spinner: React.FC = () => (
-	<div className={styles.root}>
-		<Spin className={styles.progress} />
-	</div>
-)
+const Spinner: FC = () => (
+  <div className={styles.spinner}>
+    <CircularProgress className={styles.spinnerPosition} />
+  </div>
+);
 
-export default Spinner
+export default Spinner;

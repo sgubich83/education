@@ -1,3 +1,4 @@
-import history from './history'
+import history from "./history";
+import AuthorizationUtils from "./AuthorizationUtils";
 
-export { history }
+export { history, AuthorizationUtils };

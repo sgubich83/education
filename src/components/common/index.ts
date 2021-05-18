@@ -1,3 +1,5 @@
-import Spinner from './Spinner'
+import Spinner from "./Spinner";
+import ErrorMessage from "./ErrorMessage";
+import Portal from "./Portal";
 
-export { Spinner }
+export { Spinner, ErrorMessage, Portal };
