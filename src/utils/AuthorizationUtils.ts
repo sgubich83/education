@@ -16,7 +16,6 @@ class AuthorizationUtils {
   }
 
   redirectToMainForm() {
-    console.log("clear");
     this.clearSession();
     history.push("/main");
   }
@@ -29,18 +28,6 @@ class AuthorizationUtils {
       this.redirectToMainForm();
     }
   }
-
-  checkSessionToken() {
-    const token = this.getSessionToken();
-    if (!token) {
-      this.redirectToMainForm();
-    }
-  }
-
-  // isAnonymousApiMethod(url: string | undefined) {
-  // 	if (!url) return false
-  // 	return ANONYMOUS_API_METHODS.some(path => path.includes(url))
-  // }
 }
 
 export default new AuthorizationUtils();

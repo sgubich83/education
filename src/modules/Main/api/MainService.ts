@@ -15,7 +15,7 @@ class MainService extends BaseAPI {
     const token = AuthorizationUtils.getSessionToken();
     return this.call({
       method: "DELETE",
-      url: `/Logout/${token}`,
+      url: `/logout/${token}`,
     });
   }
 }

@@ -4,9 +4,10 @@ import { AuthorizationUtils } from "utils";
 import { AppLayout } from "layouts";
 import { Spinner } from "components/common";
 
-const Dashboard = lazy(() => import("modules/Dashboard/pages/Dashboard"));
+const Notes = lazy(() => import("modules/Notes/pages/Notes"));
 const UsersList = lazy(() => import("modules/Users/pages/UsersList"));
 const UserDetails = lazy(() => import("modules/Users/pages/UserDetails"));
+const Fiber = lazy(() => import("modules/Fiber/pages/Fiber"));
 
 const App = () => {
   useEffect(() => {
@@ -21,10 +22,11 @@ const App = () => {
     <AppLayout>
       <Suspense fallback={<Spinner />}>
         <Switch>
-          <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/notes" component={Notes} />
           <Route exact path="/users/:id" component={UserDetails} />
           <Route exact path="/users" component={UsersList} />
-          <Redirect path="*" to="/dashboard" />
+          <Route exact path="/fiber" component={Fiber} />
+          <Redirect path="*" to="/notes" />
         </Switch>
       </Suspense>
     </AppLayout>

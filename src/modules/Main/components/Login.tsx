@@ -15,6 +15,7 @@ import {
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Alert from "@material-ui/lab/Alert";
+import { withPortal } from "hocs";
 import { AuthorizationUtils } from "utils";
 import { login } from "modules/Main/reducers/main";
 import styles from "./styles.module.scss";
@@ -63,7 +64,7 @@ const Login: FC = () => {
 
   const handleClick = () => {
     setLazyButton(true);
-    dispatch(login({ email: "eve.holt@reqres.in", password: "cityslicka" }));
+    dispatch(login({ email: "a@a.aa", password: "Password1" }));
   };
 
   function renderForm(props: FormikProps<IFormValues>) {
@@ -104,7 +105,10 @@ const Login: FC = () => {
 
   return (
     <div className={styles.root}>
-      {t("login.signIn")}
+      <div>
+        {t("login.signIn")}
+        {withPortal(t("login.description"))}
+      </div>
       {error && (
         <div className={styles.error}>
           <Alert severity="error">{error}</Alert>
@@ -133,8 +137,8 @@ const Login: FC = () => {
             <Typography className={styles.credentials}>
               {t("common.credentials")}
             </Typography>
-            <Typography>eve.holt@reqres.in</Typography>
-            <Typography>cityslicka</Typography>
+            <Typography>a@a.aa</Typography>
+            <Typography>Password1</Typography>
             <Typography style={{ marginTop: "20px" }}>
               <Button variant="outlined" onClick={handleClick}>
                 {t("common.lazy.button")}

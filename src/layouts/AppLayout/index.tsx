@@ -11,8 +11,9 @@ interface IAppLayoutProps {
 }
 
 const MENU = {
-  dashboard: 0,
+  notes: 0,
   users: 1,
+  fiber: 2,
 };
 
 const AppLayout: FC<IAppLayoutProps> = ({ children }) => {
@@ -43,11 +44,12 @@ const AppLayout: FC<IAppLayoutProps> = ({ children }) => {
         variant="fullWidth"
         indicatorColor="primary"
         textColor="primary"
-        value={MENU[locationValue]}
+        value={MENU[locationValue] || 0}
         onChange={handleChange}
       >
-        <Tab label={t("navigation.dashboard")} disabled={disabled} />
-        <Tab label={t("navigation.users")} disabled={disabled} />
+        <Tab label={t("navigation.notes")} disabled={disabled} value={0} />
+        <Tab label={t("navigation.users")} disabled={disabled} value={1} />
+        <Tab label={t("navigation.fiber")} disabled={disabled} value={2} />
       </Tabs>
       <Container className={styles.container}>{children}</Container>
     </div>

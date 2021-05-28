@@ -8,7 +8,6 @@ import {
   ListItemSecondaryAction,
   IconButton,
 } from "@material-ui/core";
-import CloseIcon from "@material-ui/icons/Close";
 import DoneIcon from "@material-ui/icons/Done";
 import { withPortal } from "hocs";
 import styles from "./styles.module.scss";
@@ -27,7 +26,7 @@ const Task = () => {
       id: 2,
       text: t("common.work2"),
       description: t("common.description2"),
-      status: CloseIcon,
+      status: DoneIcon,
     },
     {
       id: 3,
@@ -45,11 +44,17 @@ const Task = () => {
       id: 5,
       text: t("common.work5"),
       description: t("common.description5"),
-      status: CloseIcon,
+      status: DoneIcon,
     },
     {
       id: 6,
       text: t("common.work6"),
+      description: t("common.description6"),
+      status: DoneIcon,
+    },
+    {
+      id: 7,
+      text: t("common.work7"),
     },
   ];
 

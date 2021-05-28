@@ -22,7 +22,6 @@ const payloadMiddleware = ({ dispatch }: MiddlewareAPI) => (next: Dispatch) => (
 
   if (error) {
     const { error: ErrorCode, status } = error;
-    console.log("status!!!", status);
     if (
       ErrorCode === "InvalidSessionToken" ||
       ErrorCode === "MissingSessionIdentifier" ||

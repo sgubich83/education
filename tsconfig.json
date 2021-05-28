@@ -18,6 +18,7 @@
     "isolatedModules": true,
     "strictNullChecks":false,
     "suppressImplicitAnyIndexErrors": true,
+    "experimentalDecorators": true,
     "downlevelIteration": true,
     "noEmit": true,
     "jsx": "react",
@@ -26,7 +27,9 @@
   "include": [
     "src"
   ],
-  "types": ["node"], // within compilerOptions
+  "types": [
+    "node"
+  ],
   "exclude": [
     "node_modules",
     "typings/main",

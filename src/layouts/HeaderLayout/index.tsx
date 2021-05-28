@@ -28,6 +28,7 @@ const HeaderLayout: FC<IHeaderLayoutProps> = ({ children }) => {
         <div className={styles.header}>{t("common.appName")}</div>
         <div className={styles.locale}>
           <Button
+            className={lang === "en" ? styles.button : ""}
             size="small"
             onClick={() => handleClick("en")}
             disabled={lang === "en"}
@@ -35,6 +36,7 @@ const HeaderLayout: FC<IHeaderLayoutProps> = ({ children }) => {
             EN
           </Button>
           <Button
+            className={lang === "ru" ? styles.button : ""}
             size="small"
             onClick={() => handleClick("ru")}
             disabled={lang === "ru"}
@@ -42,6 +44,7 @@ const HeaderLayout: FC<IHeaderLayoutProps> = ({ children }) => {
             RU
           </Button>
           <Button
+            className={lang === "pl" ? styles.button : ""}
             size="small"
             onClick={() => handleClick("pl")}
             disabled={lang === "pl"}

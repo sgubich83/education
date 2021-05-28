@@ -39,9 +39,10 @@ const UserDetails: FC = () => {
   }
 
   if (error) {
+    const currentError = error || t("common.not.found");
     return (
       <Alert severity="error" className={styles.error}>
-        {t("common.not.found")}
+        {currentError}
       </Alert>
     );
   }
@@ -49,8 +50,6 @@ const UserDetails: FC = () => {
   if (isLoading || !data) {
     return <Spinner />;
   }
-
-  const { data: currentData, support } = data;
 
   return (
     <Card className={styles.card}>
@@ -68,13 +67,11 @@ const UserDetails: FC = () => {
           <Typography color="textPrimary">{t("users.support")}</Typography>
         </div>
         <div className={styles.content}>
-          <Typography color="textSecondary">{currentData.id}</Typography>
-          <Typography color="textSecondary">
-            {currentData.first_name}
-          </Typography>
-          <Typography color="textSecondary">{currentData.last_name}</Typography>
-          <Typography color="textSecondary">{currentData.email}</Typography>
-          <Typography color="textSecondary">{support.text}</Typography>
+          <Typography color="textSecondary">{data.id}</Typography>
+          <Typography color="textSecondary">{data.first_name}</Typography>
+          <Typography color="textSecondary">{data.last_name}</Typography>
+          <Typography color="textSecondary">{data.email}</Typography>
+          <Typography color="textSecondary">{data.text}</Typography>
         </div>
       </CardContent>
     </Card>

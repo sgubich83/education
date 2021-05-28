@@ -3,7 +3,7 @@ import axios, { AxiosInstance, AxiosRequestConfig, AxiosError } from "axios";
 const API_CALL_TIMEOUT = 30000;
 
 const axiosConfig: AxiosRequestConfig = {
-  baseURL: "https://reqres.in/api",
+  baseURL: "http://localhost:3100/api",
   timeout: API_CALL_TIMEOUT,
   headers: {
     Accept: "application/json;charset=UTF-8",
