@@ -1,4 +1,4 @@
-# Sergei Gubich eduction project
+# Sergei Gubich education project
 
 ## Available Scripts
 

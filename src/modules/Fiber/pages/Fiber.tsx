@@ -7,6 +7,8 @@ const Fiber: FC = () => {
   const myMesh = useRef();
   const [vertical, setVertical] = useState(false);
   const [horizontal, setHorizontal] = useState(false);
+  const [hovered, setHover] = useState(false);
+  const [active, setActive] = useState(false);
 
   const onVerticalHandler = () => {
     setVertical((prevCheck) => !prevCheck);
@@ -31,9 +33,15 @@ const Fiber: FC = () => {
     });
 
     return (
-      <mesh ref={myMesh}>
+      <mesh
+        ref={myMesh}
+        scale={active ? 1.5 : 1}
+        onClick={() => setActive(!active)}
+        onPointerOver={() => setHover(true)}
+        onPointerOut={() => setHover(false)}
+      >
         <boxBufferGeometry />
-        <meshPhongMaterial color="royalblue" />
+        <meshPhongMaterial color={hovered ? "hotpink" : "royalblue"} />
       </mesh>
     );
   }
