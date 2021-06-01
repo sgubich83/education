@@ -1,4 +1,4 @@
-import React, { FC, ChangeEvent, useState } from "react";
+import React, { FC, ChangeEvent, useState, KeyboardEvent } from "react";
 import { useTranslation } from "react-i18next";
 import { NotesStore } from "modules/Notes/store/NotesStore";
 import { TextField, Button } from "@material-ui/core";
@@ -21,8 +21,15 @@ const NoteInput: FC<InputProps> = ({ addNote }) => {
     setNote("");
   };
 
+  const onKeyPressAddNoteHandler = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      addNote(note);
+      setNote("");
+    }
+  };
+
   return (
-    <div className={styles.note}>
+    <div className={styles.note} onKeyPress={onKeyPressAddNoteHandler}>
       <TextField
         style={{ marginRight: 10 }}
         value={note}

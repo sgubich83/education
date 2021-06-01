@@ -13,8 +13,8 @@ const NotesList: FC = observer(() => {
 
   const getNoteView = () => (
     <List>
-      {notesStore.completedNotes.map((note) => (
-        <ListItem key={note}>
+      {notesStore.completedNotes.map((note, index) => (
+        <ListItem key={`${note}-${index}`}>
           <ListItemText primary={note} />
         </ListItem>
       ))}
