@@ -22,7 +22,7 @@ const NoteInput: FC<InputProps> = ({ addNote }) => {
   };
 
   const onKeyPressAddNoteHandler = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
+    if (!!note && e.key === "Enter") {
       addNote(note);
       setNote("");
     }
